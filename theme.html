@@ -220,6 +220,11 @@
           <div class="post-footer">
             <p class="back"><a href="/">&laquo; Go Back</a></p>
             <div class="fb-comments" data-href="http://kin-der.postach.io/" data-numposts="5" data-colorscheme="light"></div>
+            {{ post.url }}<br/>
+            {{ post.type }}<br/>
+            {{ post.slug }}<br/>
+            {{ post.permalink }}<br/>
+
           </div>
           {% if site.disqus %}
           <div class="post-comments">
