@@ -336,7 +336,7 @@ div.header div.site-description {
 div.header div.site-description h1 {
   font-size: 20px;
   line-height: 30px;
-  color: #ffffff;
+  color: #ffffff;div.post h2
   padding-bottom: 10px;
 }
 div.header div.site-description p {
@@ -345,7 +345,7 @@ div.header div.site-description p {
   color: #ffffff;
 }
 div.header div.site-description ul {
-  padding-top: 30px;
+  padding-top: 30px;div.post h2
 }
 div.header div.site-description ul li {
   padding-bottom: 14px;
@@ -411,6 +411,8 @@ div.post h3 {
   padding-bottom: 10px;
   margin: 0;
   line-height: default;
+  color:#ade;
+  font-size:999;
 }
 div.post h3 {
   font-size: 22px;
