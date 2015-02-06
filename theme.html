@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">
   <head>
-    <script type="text/javascript">
-    location.ref = "{{ assets('sample2/www/index.html') }}"
-    </script>
     <meta charset="utf-8">
     <title>
       {% if is_login %}Login
@@ -15,7 +12,8 @@
     </title>
 
     {{ header_meta }}
-
+    <script type="text/javascript" src="{{ assets('orchestra_lib.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ assets('orchestra_lib.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
 
     <!--[if IE 7]>
