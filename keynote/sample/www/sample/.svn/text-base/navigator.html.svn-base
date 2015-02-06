@@ -1,0 +1,70 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="../iscroll.js"></script>
+	<script type="text/javascript" src="../jquery2.1.1.js"></script>
+	<script type="text/javascript" src="../lib/orchestra_lib.js"></script>
+	<link rel="stylesheet" type="text/css" href="../lib/orchestra_lib.css">
+</head>
+<body>
+	<script type="text/javascript">
+		var navigationController;
+		
+		function back() {
+			if (navigationController.hasBack()) {
+				navigationController.back();
+			}
+			else {
+				alert("첫페이지");
+			}
+		}
+		function innerPageLoad(fileName) {
+			var element = $("<div>",{
+				style:"width:100%;height:100%"
+			});
+			var view = new HtmlBinder(element);
+			var url = WEB_ROOT+"/sample/innerHtml/"+fileName;
+			view.load(url,null,function(e){
+				console.log(e);
+				setTimeout(function(){ //이동할 페이지가 아닌 현재페이지 오류로 착각하지 않기위해 넣은 타임아웃
+					alert('페이지 오류\n'+url);
+					navigationController.back();
+				},200);
+			});
+			navigationController.push(element);
+
+		}
+		function test() {
+			var element = $("<div>",{
+				style:"width:400px;height:200px;"
+			});
+			var view = new HtmlBinder(element);
+			var url = WEB_ROOT+"/sample/innerHtml/leftMenu.html";
+			view.load(url);
+			POPUP.show(element);
+		}
+		$(function(){
+			navigationController = new Navigator($("#contentsWrap"));
+			innerPageLoad("1st.html");
+		});
+		
+	</script>
+	<style type="text/css">
+		html,body {
+			padding:0px;
+			margin:0px;
+		}
+		#contentsWrap {
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			bottom:0px;
+		}
+	</style>
+	<div id="contentsWrap">
+		
+	</div>
+</body>
+</html>

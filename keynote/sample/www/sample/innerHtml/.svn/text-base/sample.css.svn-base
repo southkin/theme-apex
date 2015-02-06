@@ -1,0 +1,23 @@
+.sample_bg {
+	background-image:url(sample.png);
+	background-size:cover;
+}
+.innerScroll {
+	width:300px;
+	height:50%;
+	overflow:hidden;
+}
+.innerScroll ul{
+	width:100%;
+}
+.innerScroll li{
+	list-style: none;
+	height:100px;
+	width:100%;
+}
+.innerScroll li:nth-child(2n+1) {
+	background-color:#ade;
+}
+.innerScroll li:nth-child(2n+2) {
+	background-color:#eda;
+}

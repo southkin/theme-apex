@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="../iscroll.js"></script>
+	<script type="text/javascript" src="../jquery2.1.1.js"></script>
+	<script type="text/javascript" src="../lib/orchestra_lib.js"></script>
+	<link rel="stylesheet" type="text/css" href="../lib/orchestra_lib.css">
+</head>
+<body>
+	<script type="text/javascript">
+		var leftBinder;
+		var bottomBinder;
+		var contentsBinder;
+
+		$(function(){
+			leftBinder = new HtmlBinder($(".leftMenuWrap"));
+			leftBinder.load("innerHtml/leftMenu.html");
+
+			bottomBinder = new HtmlBinder($(".bottomMenuWrap"));
+			bottomBinder.load("innerHtml/bottomMenu.html");
+
+			contentsBinder = new HtmlBinder($(".contentsWrap"));
+			contentsBinder.load("innerHtml/sample.html");
+		});
+		function contentsLoad(url) {
+			contentsBinder.load(url);
+		}
+		function toggleAnimation() {
+			$(".contentsWrap").toggleClass("HtmlBinder_Animation");
+			alert($(".contentsWrap").hasClass("HtmlBinder_Animation")?"켜기":"끄기");
+		}
+
+	</script>
+	<style type="text/css">
+		html,body {
+			padding:0px;
+			margin:0px;
+		}
+		.leftMenuWrap {
+			position:absolute;
+			width:20%;
+			left:0px;
+			top:0px;
+			bottom:50px;
+		}
+		.contentsWrap {
+			position:absolute;
+			width:80%;
+			left:20%;
+			top:0px;
+			bottom:50px;
+		}
+		.bottomMenuWrap {
+			position:absolute;
+			width:100%;
+			bottom:0px;
+			height:50px;
+		}
+		
+	</style>
+	<div class="leftMenuWrap">
+		
+	</div>
+	<div class="contentsWrap">
+		
+	</div>
+	<div class="bottomMenuWrap">
+
+	</div>
+</body>
+</html>

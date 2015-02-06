@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="../../iscroll.js"></script>
+	<script type="text/javascript" src="../../jquery2.1.1.js"></script>
+	<script type="text/javascript" src="../../orchestra_lib.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../orchestra_lib.css">
+</head>
+<body class="typeA">
+	<script type="text/javascript">
+		$(function(){
+			//htmlBinder 생성
+			var a_binder = new HtmlBinder($("#a_wrap"));
+			var b_binder = new HtmlBinder($("#b_wrap"));
+
+			//htmlBinder에 html 파일 로드
+			a_binder.load("a.html");
+			b_binder.load("b.html");
+		});
+	</script>
+	<style type="text/css">
+		html,body {
+			padding:0px;
+			margin:0px;
+		}
+		#a_wrap {
+			width:100%;
+			height:30%;
+		}
+		#b_wrap {
+			width:100%;
+			height:70%;
+		}
+		.fullSize {
+			width:100%;
+			height:100%;
+		}
+	</style>
+	<div id="a_wrap">
+		
+	</div>
+	<div id="b_wrap">
+		
+	</div>
+</body>
+</html>

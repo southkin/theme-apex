@@ -1,0 +1,132 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="../../iscroll.js"></script>
+	<script type="text/javascript" src="../../jquery2.1.1.js"></script>
+	<script type="text/javascript" src="../../orchestra_lib.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../orchestra_lib.css">
+	<style type="text/css">
+		html,body {
+			padding:0px;
+			margin:0px;
+		}
+		.fullSize {
+			width:100%;
+			height:100%;
+		}
+	</style>
+</head>
+<body class="typeB">
+	<style type="text/css">
+		#b_contents {
+			overflow:hidden;
+		}
+		.typeA #b_wrap1, .typeA #b_wrap2 {
+			float:left;
+		}
+		#b_wrap1, #b_wrap2, #b_wrap2_1, #b_wrap2_2 {
+			overflow:hidden;
+			position:relative;
+			-webkit-transition-delay: 0s;
+			-webkit-transition-duration: 0.5s;
+			-webkit-transition-property: all;
+			-webkit-transition-timing-function: ease-out;
+		}
+		.typeA .pic1 #b_wrap1, .typeA .pic2 #b_wrap1 {
+			width:30%;
+			height:100%;
+		}
+		.typeA .pic1 #b_wrap2, .typeA .pic2 #b_wrap2 {
+			width:70%;
+			height:100%;
+		}
+		.typeA .pic1 #b_wrap2 > div {
+			width:100%;
+			height:50%;
+		}
+		.typeA .pic2 #b_wrap2 > div {
+			width:100%;
+			height:100%;
+		}
+		.typeA .pic3 #b_wrap1 {
+			width:100%;
+			height:100%;
+		}
+		.typeA .pic3 #b_wrap2 {
+			width:0%;
+			height:100%;
+		}
+		.typeB #b_wrap1 {
+			width:100%;
+			height:70%;
+		}
+		.typeB #b_wrap2 {
+			width:100%;
+			height:30%;
+		}
+		.typeB #b_wrap2_1 {
+			width:100%;
+			height:100%;
+		}
+		.typeB #b_wrap2_2 {
+			width:0%;
+			height:0%;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var isTypeA = $("body").hasClass("typeA");
+			var c_binder;
+			var d_binder;
+
+			c_binder = new HtmlBinder($("#b_wrap2_1"));
+			c_binder.load("c.html");
+			if (isTypeA) {
+				d_binder = new HtmlBinder($("#b_wrap2_2"));
+				d_binder.load("d.html");	
+			}
+
+			$("#b_button1").click(function(){
+				if (isTypeA) {
+					$("#b_contents").attr("class","pic1");
+				}
+				else {
+					c_binder.load("c.html");
+				}
+			});
+			$("#b_button2").click(function(){
+				if (isTypeA) {
+					$("#b_contents").attr("class","pic2");
+				}
+				else {
+					c_binder.load("d.html");
+				}
+				
+			});
+			$("#b_button3").click(function(){
+				if (isTypeA) {
+					$("#b_contents").attr("class","pic3");	
+				}
+				else {
+					alert("첫번째 샘플용 버튼 입니다.");
+				}
+			});
+		});
+	</script>
+	<div style="background-color:#dae" class="fullSize">
+		<div id="b_contents" class="pic1">
+			<div id="b_wrap1">
+				<button id="b_button1">그림1</button>
+				<button id="b_button2">그림2</button>
+				<button id="b_button3">그림3</button>
+			</div>
+			<div id="b_wrap2">
+				<div id="b_wrap2_1"></div>
+				<div id="b_wrap2_2"></div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

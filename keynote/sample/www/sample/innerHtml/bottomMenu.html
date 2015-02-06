@@ -1,0 +1,43 @@
+<style type="text/css">
+	#bottomMenuDiv > div {
+		float:left;
+		text-align:center;
+		height:100%;
+		box-sizing:border-box;
+		border-top:1px solid #ade;
+		background-color:#dec;
+		width:100%;
+	}
+	#bottomMenuDiv > div:nth-child(1) {
+		width:30%;
+		box-sizing:border-box;
+		border-right:1px solid #ade;
+	}
+	#bottomMenuDiv > div:nth-child(2) {
+		width:70%;
+	}
+	#bottomMenuDiv > div:nth-child(3) {
+		width:100px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#loadBtn").click(function(){
+			var url = $("#urlInput").val();
+			contentsLoad(url);
+		});
+		$("#animationToggleBtn").click(function(){
+			toggleAnimation();
+		});
+		$("#bottomMenuDiv").parent().trigger("scrollRefresh");
+	});
+</script>
+<div id="bottomMenuDiv">
+	<div>
+		<button id="animationToggleBtn">Animation</button>
+	</div>
+	<div>
+		<input id="urlInput" type="text" value="innerHtml/sample.html"/>
+		<button id="loadBtn">load</button>
+	</div>
+</div>
