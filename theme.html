@@ -12,6 +12,23 @@
     </title>
 
     {{ header_meta }}
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '759896674088500',
+          xfbml      : true,
+          version    : 'v2.2'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script type="text/javascript" src="{{ assets('iscroll.js') }}"></script>
     <script type="text/javascript" src="{{ assets('jquery2.1.1.js') }}"></script>
     <script type="text/javascript" src="{{ assets('orchestra_lib.js') }}"></script>
@@ -202,6 +219,7 @@
           </div>
           <div class="post-footer">
             <p class="back"><a href="/">&laquo; Go Back</a></p>
+            <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="5" data-colorscheme="light"></div>
           </div>
           {% if site.disqus %}
           <div class="post-comments">
